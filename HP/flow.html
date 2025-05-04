@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご利用の流れ - TK Office</title> <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles specific to this Flow page */
+        .flow-card {
+            background-color: white; border-radius: 1rem; box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;
+            text-align: center; padding: 1.5rem; /* p-6 */
+        }
+        .flow-card:hover {
+            transform: translateY(-5px); box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15);
+        }
+        .flow-step-icon {
+            width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0; font-size: 24px; color: white; margin: 0 auto 0.75rem;
+        }
+        .flow-step-connector {
+            position: absolute; top: 28px; /* Half of icon height */ left: 100%; width: 3rem; /* Adjust as needed */
+             height: 2px; z-index: -1; /* Behind cards */
+        }
+        .flow-step-connector::after { /* Arrow head */
+            content: ''; position: absolute; right: 0; top: -4px; width: 0; height: 0;
+            border-left: 8px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent;
+        }
+         /* Hide connector on the last card in the grid context */
+        .flow-container > .relative:last-child .flow-step-connector { display: none; }
+        .info-card {
+            background-color: white; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        /* Animation styles */
+         @keyframes fadeInUp { from { opacity: 0; transform: translate3d(0, 20px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+        .animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; } .delay-5 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="w-full py-4 px-16 bg-blue-900 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-bold text-white">TK Office</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="index.html" class="text-gray-300 hover:text-white transition font-medium">トップ</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-white transition font-medium">TK Officeについて</a></li>
+            <li><a href="services.html" class="text-gray-300 hover:text-white transition font-medium">サービス一覧</a></li>
+            <li><a href="flow.html" class="text-white font-bold border-b-2 border-white pb-1">ご利用の流れ</a></li> <li><a href="faq.html" class="text-gray-300 hover:text-white transition font-medium">よくある質問</a></li>
+            <li><a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-sm">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto py-12 px-4">
+        <div class="text-center mb-12 animate-fadeInUp">
+            <h1 class="text-4xl font-bold mb-3">
+                <i class="fas fa-route mr-3 text-blue-600"></i>
+                <span class="gradient-text">ご利用の流れ</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                シンプルな5ステップで、あなたのビジネスにAIの力を取り入れましょう
+            </p>
+             <nav aria-label="breadcrumb" class="mt-4 text-sm text-gray-500">
+                <ol class="list-none p-0 inline-flex">
+                  <li class="flex items-center"> <a href="index.html" class="hover:text-blue-600">トップ</a> <i class="fas fa-angle-right mx-2"></i> </li>
+                  <li class="text-gray-700" aria-current="page">ご利用の流れ</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="flow-container grid grid-cols-1 md:grid-cols-5 gap-x-12 gap-y-8 mb-12 relative px-4 md:px-0">
+            <div class="relative animate-fadeInUp delay-1">
+                <div class="flow-card">
+                    <div class="flow-step-connector bg-blue-400 text-blue-400 hidden md:block"></div>
+                    <div class="flow-step-icon bg-blue-500"> <i class="fas fa-comments"></i> </div>
+                    <div class="flex-grow"> <h3 class="text-lg font-bold text-gray-800 mb-2">1. お問い合わせ</h3> <p class="text-sm text-gray-600"> お問い合わせフォームから、ご希望のサービスとご要望をお送りください </p> </div>
+                </div>
+            </div>
+            <div class="relative animate-fadeInUp delay-2">
+                 <div class="flow-card">
+                    <div class="flow-step-connector bg-indigo-400 text-indigo-400 hidden md:block"></div>
+                    <div class="flow-step-icon bg-indigo-500"> <i class="fas fa-file-contract"></i> </div>
+                    <div class="flex-grow"> <h3 class="text-lg font-bold text-gray-800 mb-2">2. ご発注・ヒアリング</h3> <p class="text-sm text-gray-600"> 詳細なご要望をヒアリングし、お見積りと納期をご提案します </p> </div>
+                </div>
+            </div>
+            <div class="relative animate-fadeInUp delay-3">
+                <div class="flow-card">
+                    <div class="flow-step-connector bg-purple-400 text-purple-400 hidden md:block"></div>
+                    <div class="flow-step-icon bg-purple-500"> <i class="fas fa-laptop-code"></i> </div>
+                    <div class="flex-grow"> <h3 class="text-lg font-bold text-gray-800 mb-2">3. 作業開始</h3> <p class="text-sm text-gray-600"> AIと人間による作業を開始し、高品質な成果物を作成します </p> </div>
+                </div>
+            </div>
+            <div class="relative animate-fadeInUp delay-4">
+                 <div class="flow-card">
+                    <div class="flow-step-connector bg-pink-400 text-pink-400 hidden md:block"></div>
+                    <div class="flow-step-icon bg-pink-500"> <i class="fas fa-clipboard-check"></i> </div>
+                    <div class="flex-grow"> <h3 class="text-lg font-bold text-gray-800 mb-2">4. 納品・ご確認</h3> <p class="text-sm text-gray-600"> 完成した成果物をお届けし、ご確認いただきます </p> </div>
+                </div>
+            </div>
+            <div class="relative animate-fadeInUp delay-5">
+                 <div class="flow-card">
+                    <div class="flow-step-icon bg-red-500"> <i class="fas fa-sync-alt"></i> </div>
+                    <div class="flex-grow"> <h3 class="text-lg font-bold text-gray-800 mb-2">5. 修正対応</h3> <p class="text-sm text-gray-600"> 必要に応じて修正を行い、ご満足いただける成果物に仕上げます </p> </div>
+                </div>
+             </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="info-card p-6 animate-fadeInUp delay-1">
+                <div class="flex items-start mb-3"> <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0"> <i class="fas fa-redo text-blue-600"></i> </div> <div> <h3 class="text-lg font-bold text-gray-800 mb-1">修正回数について</h3> <p class="text-gray-600 text-sm"> 納品後の修正は<span class="font-bold">2回まで基本料金内</span>で対応いたします。 3回目以降の修正はお客様都合の場合、 <span class="text-blue-600 font-medium">2回ごとに追加料金1,000円</span>を申し受けます。 </p> </div> </div>
+                <div class="pl-13 pt-3 border-t border-gray-100 mt-3"> <div class="flex items-center text-sm text-gray-600 mb-1"> <i class="fas fa-exclamation-circle text-amber-500 mr-2 w-4 text-center"></i> <span>こちらの内容不備による修正は回数にカウントしません</span> </div> <div class="flex items-center text-sm text-gray-600"> <i class="fas fa-check-circle text-green-500 mr-2 w-4 text-center"></i> <span>修正リクエストはできるだけ具体的にお伝えください</span> </div> </div>
+            </div>
+            <div class="info-card p-6 animate-fadeInUp delay-2">
+                <div class="flex items-start mb-3"> <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0"> <i class="fas fa-bolt text-green-600"></i> </div> <div> <h3 class="text-lg font-bold text-gray-800 mb-1">特急対応について</h3> <p class="text-gray-600 text-sm"> お急ぎの場合は特急対応が可能です。納期短縮をご希望の際は、お問い合わせ時にお知らせください。 </p> </div> </div>
+                <div class="flex justify-around space-x-4 pt-3 border-t border-gray-100 mt-3"> <div class="text-center"> <span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full">特急</span> <p class="text-sm font-medium mt-1">24時間以内納品</p> <p class="text-xs text-blue-600">基本料金 <span class="font-bold">+30%</span></p> </div> <div class="text-center"> <span class="bg-red-100 text-red-800 text-xs px-2.5 py-1 rounded-full">超特急</span> <p class="text-sm font-medium mt-1">当日納品</p> <p class="text-xs text-red-600">基本料金 <span class="font-bold">+50%</span></p> </div> </div>
+            </div>
+            <div class="info-card p-6 col-span-1 md:col-span-2 bg-gradient-to-r from-blue-50 to-purple-50 animate-fadeInUp delay-3">
+                 <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="flex-1 mb-4 md:mb-0 md:mr-6 text-center md:text-left">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">まずはお気軽にご相談ください</h3>
+                        <p class="text-gray-600 text-sm"> 具体的なご要望がなくても、「こんなことができないか」という相談だけでもOK。<br class="hidden md:block"> AIでどのようなことができるか、最適なサービスをご提案いたします。 </p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <a href="contact.html" class="btn-primary">
+                            無料相談・お見積り <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </main>
+    <footer class="w-full bg-gray-800 text-gray-400 py-8">
+      <div class="container mx-auto text-center">
+        <div class="mb-4">
+          <a href="index.html" class="px-3 hover:text-white transition text-sm">トップ</a> |
+          <a href="about.html" class="px-3 hover:text-white transition text-sm">TK Officeについて</a> |
+          <a href="services.html" class="px-3 hover:text-white transition text-sm">サービス一覧</a> |
+          <a href="contact.html" class="px-3 hover:text-white transition text-sm">お問い合わせ</a>
+        </div>
+        <p class="text-sm">© 2024-2025 TK Office. All Rights Reserved.</p>
+      </div>
+    </footer>
+    </body>
+</html>

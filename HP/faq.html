@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくある質問 - TK Office</title> <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add any page-specific styles if needed */
+         /* Animation styles */
+         @keyframes fadeInUp { from { opacity: 0; transform: translate3d(0, 20px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+        .animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; } .delay-5 { animation-delay: 0.5s; } .delay-6 { animation-delay: 0.6s; }
+        /* FAQ specific styles are in style.css (.faq-card, .faq-answer, .faq-icon) */
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="w-full py-4 px-16 bg-blue-900 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-bold text-white">TK Office</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="index.html" class="text-gray-300 hover:text-white transition font-medium">トップ</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-white transition font-medium">TK Officeについて</a></li>
+            <li><a href="services.html" class="text-gray-300 hover:text-white transition font-medium">サービス一覧</a></li>
+            <li><a href="flow.html" class="text-gray-300 hover:text-white transition font-medium">ご利用の流れ</a></li>
+            <li><a href="faq.html" class="text-white font-bold border-b-2 border-white pb-1">よくある質問</a></li> <li><a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-sm">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto py-12 px-4">
+        <div class="text-center mb-10 animate-fadeInUp">
+            <h1 class="text-4xl font-bold mb-3">
+                 <i class="fas fa-question-circle mr-3 text-blue-600"></i>
+                 <span class="gradient-text">よくある質問</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                AI活用サービスについてよくいただくご質問と回答をまとめました
+            </p>
+            <nav aria-label="breadcrumb" class="mt-4 text-sm text-gray-500">
+                <ol class="list-none p-0 inline-flex">
+                  <li class="flex items-center"> <a href="index.html" class="hover:text-blue-600">トップ</a> <i class="fas fa-angle-right mx-2"></i> </li>
+                  <li class="text-gray-700" aria-current="page">よくある質問</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="flex justify-center space-x-4 mb-8 animate-fadeInUp delay-1">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">すべて</button>
+            <button class="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200">サービス内容</button>
+            <button class="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200">料金・お支払い</button>
+            <button class="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200">納品・修正</button>
+            <button class="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200">技術について</button>
+        </div>
+
+        <div class="max-w-4xl mx-auto space-y-4 mb-12">
+            <div class="faq-card animate-fadeInUp delay-1">
+                 <div class="faq-question flex items-center justify-between cursor-pointer p-4"> <h3 class="text-base font-bold text-gray-800">AIだけで作成するのですか？品質は大丈夫ですか？</h3> <div class="faq-icon"> <i class="fas fa-plus text-xs"></i> </div> </div>
+                <div class="faq-answer"> <p class="text-gray-600 text-sm px-4 pb-4"> AIと人間のハイブリッドアプローチを採用しています。AIが効率的に下書きや素材を作成し、人間が品質チェック・微調整を行うことで、スピードと品質を両立しています。すべてのサービスで必ず人間による最終確認を行いますので、ご安心ください。 </p> </div>
+            </div>
+            <div class="faq-card animate-fadeInUp delay-2">
+                 <div class="faq-question flex items-center justify-between cursor-pointer p-4"> <h3 class="text-base font-bold text-gray-800">納期はどのくらいかかりますか？</h3> <div class="faq-icon"> <i class="fas fa-plus text-xs"></i> </div> </div>
+                <div class="faq-answer"> <p class="text-gray-600 text-sm px-4 pb-4"> 標準納期は3日以内となっております。お急ぎの場合は特急対応（24時間以内：+30%、当日納品：+50%）もご用意しています。詳細な納期はご依頼内容の複雑さや量によって変わりますので、お問い合わせ時にご相談ください。 </p> </div>
+            </div>
+            <div class="faq-card animate-fadeInUp delay-3">
+                 <div class="faq-question flex items-center justify-between cursor-pointer p-4"> <h3 class="text-base font-bold text-gray-800">最低価格でどこまでのサービスが含まれますか？</h3> <div class="faq-icon"> <i class="fas fa-plus text-xs"></i> </div> </div>
+                <div class="faq-answer"> <p class="text-gray-600 text-sm px-4 pb-4"> 最低価格5,000円からのサービスには、基本的な作業と2回までの修正が含まれています。例えば記事作成なら約1,000字程度の記事作成と修正が含まれます。具体的な文字数や作業範囲はサービス内容によって異なりますので、ご依頼時に詳細をご案内いたします。 </p> </div>
+            </div>
+            <div class="faq-card animate-fadeInUp delay-4">
+                 <div class="faq-question flex items-center justify-between cursor-pointer p-4"> <h3 class="text-base font-bold text-gray-800">どのようなAIツールを使用していますか？</h3> <div class="faq-icon"> <i class="fas fa-plus text-xs"></i> </div> </div>
+                <div class="faq-answer"> <p class="text-gray-600 text-sm px-4 pb-4"> 業界最先端のAIツールを目的に応じて使い分けています。テキスト生成にはGPT系モデル、画像生成にはMidjourney、DALL-E、Stable Diffusionなどを用途に合わせて活用しています。また、データ処理や音声認識にも専門のAIツールを使用し、常に最新技術を取り入れています。 </p> </div>
+            </div>
+            <div class="faq-card animate-fadeInUp delay-5">
+                 <div class="faq-question flex items-center justify-between cursor-pointer p-4"> <h3 class="text-base font-bold text-gray-800">料金の支払い方法は何がありますか？</h3> <div class="faq-icon"> <i class="fas fa-plus text-xs"></i> </div> </div>
+                <div class="faq-answer"> <p class="text-gray-600 text-sm px-4 pb-4"> 銀行振込、PayPalのお支払いに対応しています。初回のご依頼は前払い、継続的なご依頼の場合は月末締め翌月払いなど柔軟に対応いたします。法人様向けには請求書払いも可能です。 </p> </div>
+            </div>
+            <div class="faq-card animate-fadeInUp delay-6">
+                 <div class="faq-question flex items-center justify-between cursor-pointer p-4"> <h3 class="text-base font-bold text-gray-800">著作権や利用権はどうなりますか？</h3> <div class="faq-icon"> <i class="fas fa-plus text-xs"></i> </div> </div>
+                <div class="faq-answer"> <p class="text-gray-600 text-sm px-4 pb-4"> 納品物の著作権はお客様に帰属します（一部サービスを除く）。ロゴデザインなど特別な著作権譲渡が必要な場合は、オプションとして対応可能です。AIを活用して作成したコンテンツの権利関係については、ご依頼時に詳細をご説明いたします。 </p> </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 shadow-sm animate-fadeInUp delay-3 max-w-4xl mx-auto">
+             <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex-1 mb-4 md:mb-0 md:mr-6 text-center md:text-left">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">もっと詳しく知りたいですか？</h3>
+                    <p class="text-gray-600 text-sm"> ご質問やご不明点がございましたら、お気軽にお問い合わせください。<br class="hidden md:block"> 個別のご要望にも柔軟に対応いたします。 </p>
+                </div>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 flex-shrink-0">
+                    <a href="mailto:intel.27p@gmail.com" class="bg-white border border-blue-200 text-blue-600 hover:bg-blue-50 font-bold py-3 px-6 rounded-lg shadow-sm transition transform hover:-translate-y-1 text-center"> <i class="far fa-envelope mr-2"></i>メールで問い合わせ </a>
+                    <a href="contact.html" class="btn-primary text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
+                        お問い合わせフォーム <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </main>
+    <footer class="w-full bg-gray-800 text-gray-400 py-8">
+      <div class="container mx-auto text-center">
+        <div class="mb-4">
+          <a href="index.html" class="px-3 hover:text-white transition text-sm">トップ</a> |
+          <a href="about.html" class="px-3 hover:text-white transition text-sm">TK Officeについて</a> |
+          <a href="services.html" class="px-3 hover:text-white transition text-sm">サービス一覧</a> |
+          <a href="contact.html" class="px-3 hover:text-white transition text-sm">お問い合わせ</a>
+        </div>
+        <p class="text-sm">© 2024-2025 TK Office. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', function() {
+                        const currentCard = this.closest('.faq-card'); // Find parent card
+                        // Toggle active class on the clicked card
+                        const isActive = currentCard.classList.toggle('active');
+
+                        // Close other cards
+                        faqCards.forEach(otherCard => {
+                            if (otherCard !== currentCard) {
+                                otherCard.classList.remove('active');
+                            }
+                        });
+                    });
+                }
+            });
+             // Optional: Category filter buttons (logic not implemented here)
+        });
+    </script>
+     </body>
+</html>

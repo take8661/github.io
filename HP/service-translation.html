@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻訳サービス (PEMT) - TK Office</title> <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles specific to this Translation page */
+        .language-flag {
+            width: 24px; height: 24px; border-radius: 50%; overflow: hidden; display: flex;
+            align-items: center; justify-content: center; font-weight: bold; font-size: 10px;
+            margin-right: 4px;
+        }
+        .lang-icon {
+            width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; margin-right: 0.5rem; font-size: 0.75rem; font-weight: bold;
+            color: white; flex-shrink: 0;
+        }
+        .use-case-item {
+            transition: all 0.3s ease; background-color: #f9fafb; border-radius: 0.5rem;
+            padding: 0.75rem; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+        }
+        .use-case-item:hover {
+            transform: translateY(-3px); box-shadow: 0 5px 15px rgba(96, 165, 250, 0.2);
+        }
+         .price-tag.pulse { animation: pulse 2s infinite; }
+         /* Animation styles */
+         @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 20px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        /* Styles for service cards should be in style.css */
+         .service-card { /* Ensure this is defined */
+             background-color: white; border-radius: 1rem; box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+             transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;
+         }
+         .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15); }
+         .service-icon { /* Ensure this is defined */
+             width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
+             justify-content: center; background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+             margin-right: 1rem; flex-shrink: 0;
+         }
+         .price-tag { /* Ensure this is defined */
+             background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%); color: white;
+             border-radius: 9999px; padding: 0.5rem 1rem; font-weight: bold; flex-shrink: 0;
+         }
+         .option-item { /* Ensure this is defined */
+             border-left: 2px solid #e5e7eb; transition: all 0.2s ease; padding: 0.25rem 0 0.25rem 0.75rem;
+         }
+         .option-item:hover { border-left: 2px solid #3B82F6; background-color: #f9fafb; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="w-full py-4 px-16 bg-blue-900 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-bold text-white">TK Office</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="index.html" class="text-gray-300 hover:text-white transition font-medium">トップ</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-white transition font-medium">TK Officeについて</a></li>
+             <li><a href="services.html" class="text-white font-bold border-b-2 border-white pb-1">サービス一覧</a></li>
+            <li><a href="flow.html" class="text-gray-300 hover:text-white transition font-medium">ご利用の流れ</a></li>
+            <li><a href="faq.html" class="text-gray-300 hover:text-white transition font-medium">よくある質問</a></li>
+            <li><a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-sm">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto py-12 px-4">
+        <div class="text-center mb-10 animate-fadeInUp">
+            <h1 class="text-4xl font-bold mb-3">
+                <i class="fas fa-language mr-3 text-indigo-600"></i>
+                <span class="gradient-text">翻訳サービス </span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                AIによる高速機械翻訳とプロのポストエディットで、<br>高品質かつ効率的な多言語コンテンツを実現
+            </p>
+            <nav aria-label="breadcrumb" class="mt-4 text-sm text-gray-500">
+                <ol class="list-none p-0 inline-flex">
+                  <li class="flex items-center"> <a href="index.html" class="hover:text-blue-600">トップ</a> <i class="fas fa-angle-right mx-2"></i> </li>
+                  <li class="flex items-center"> <a href="services.html" class="hover:text-blue-600">サービス一覧</a> <i class="fas fa-angle-right mx-2"></i> </li>
+                  <li class="text-gray-700" aria-current="page">翻訳サービス</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+             <div class="card-base p-6 col-span-1 md:col-span-3 animate-fadeInUp delay-1">
+                <div class="flex items-center justify-between mb-4"> <div class="flex items-center"> <div class="service-icon" style="background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);"> <i class="fas fa-clipboard-check text-indigo-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">翻訳のポストエディット</h3> </div> <div class="price-tag pulse"> 5,000円〜 </div> </div>
+                <div class="text-sm text-gray-500 mb-3 flex items-center"> <i class="far fa-clock mr-2"></i> <span>標準納期: 3日以内</span> </div>
+                <p class="text-gray-600 text-sm mb-4"> AI翻訳の結果を人間の翻訳者が編集・修正することで、機械翻訳の速さと人間の品質を両立。 ビジネス文書、Webサイト、マニュアル、論文など様々な種類のコンテンツに対応します。 </p>
+                <div class="bg-indigo-50 p-4 rounded-lg mb-4"> <h4 class="font-bold text-gray-700 text-sm mb-2">対応言語例</h4> <div class="grid grid-cols-2 sm:grid-cols-4 gap-2"> <div class="flex items-center bg-white p-2 rounded hover:bg-indigo-100 transition-colors shadow-sm"> <div class="lang-icon bg-red-500">JP</div> <span class="text-xs">日本語</span> </div> <div class="flex items-center bg-white p-2 rounded hover:bg-indigo-100 transition-colors shadow-sm"> <div class="lang-icon bg-blue-500">EN</div> <span class="text-xs">英語</span> </div> <div class="flex items-center bg-white p-2 rounded hover:bg-indigo-100 transition-colors shadow-sm"> <div class="lang-icon bg-yellow-500">CN</div> <span class="text-xs">中国語</span> </div> <div class="flex items-center bg-white p-2 rounded hover:bg-indigo-100 transition-colors shadow-sm"> <div class="lang-icon bg-green-500">KR</div> <span class="text-xs">韓国語</span> </div> <div class="flex items-center bg-white p-2 rounded hover:bg-indigo-100 transition-colors shadow-sm"> <div class="lang-icon bg-purple-500">FR</div> <span class="text-xs">フランス語</span> </div> <div class="flex items-center bg-white p-2 rounded hover:bg-indigo-100 transition-colors shadow-sm"> <div class="lang-icon bg-pink-500">DE</div> <span class="text-xs">ドイツ語</span> </div> <div class="flex items-center bg-white p-2 rounded hover:bg-indigo-100 transition-colors shadow-sm"> <div class="lang-icon bg-orange-500">ES</div> <span class="text-xs">スペイン語</span> </div> <div class="flex items-center bg-white p-2 rounded hover:bg-indigo-100 transition-colors shadow-sm"> <div class="lang-icon bg-gray-500">+</div> <span class="text-xs">その他多数</span> </div> </div> </div>
+                <div class="bg-gray-50 p-3 rounded-lg mt-auto"> <h4 class="font-bold text-gray-700 text-sm mb-2">主なオプション</h4> <div class="space-y-2"> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>用語集への準拠チェック強化</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>スタイルガイドへの準拠チェック強化</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>ネイティブスピーカーによる最終チェック</span> <span class="text-blue-600 font-medium">要見積</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>原文との厳密な突き合わせチェック</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> </div> </div>
+            </div>
+            <div class="card-base p-6 col-span-1 md:col-span-2 animate-fadeInUp delay-2 flex flex-col">
+                <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center"> <i class="fas fa-cogs text-indigo-600 mr-2"></i> 翻訳プロセスと特徴 </h3>
+                <div class="flex-grow grid grid-cols-1 gap-6"> <div class="mb-4 md:mb-0"> <h4 class="font-bold text-gray-700 text-sm mb-2"></h4> <ol class="space-y-2 text-sm"> <li class="flex items-start"> <span class="bg-indigo-100 text-indigo-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 flex-shrink-0">1</span> <span class="text-gray-600">AI翻訳エンジンによる初期翻訳</span> </li> <li class="flex items-start"> <span class="bg-indigo-200 text-indigo-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 flex-shrink-0">2</span> <span class="text-gray-600">専門翻訳者によるレビュー・編集</span> </li> <li class="flex items-start"> <span class="bg-indigo-300 text-indigo-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 flex-shrink-0">3</span> <span class="text-gray-600">用語統一性と文体の調整</span> </li> <li class="flex items-start"> <span class="bg-indigo-400 text-indigo-800 rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 flex-shrink-0">4</span> <span class="text-gray-600">品質チェックと最終レビュー</span> </li> <li class="flex items-start"> <span class="bg-indigo-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-2 flex-shrink-0">5</span> <span class="text-gray-600">フォーマット調整と最終納品</span> </li> </ol> </div> <div> <h4 class="font-bold text-gray-700 text-sm mb-2">主なメリット</h4> <ul class="text-sm space-y-1 mb-4"> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span class="text-gray-600">通常の人力翻訳と比べて<span class="font-medium">30〜50%のコスト削減</span></span> </li> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span class="text-gray-600">納期の<span class="font-medium">大幅短縮</span>が可能</span> </li> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span class="text-gray-600">一貫した<span class="font-medium">用語・表現の統一性</span>を確保</span> </li> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span class="text-gray-600"><span class="font-medium">多言語対応</span>で国際展開をサポート</span> </li> </ul> </div> </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-3 rounded-lg text-center mt-auto"> <p class="text-indigo-600 font-medium text-sm mb-3">お急ぎの場合は特急対応も可能です</p> <div class="flex justify-center space-x-3"> <div class="bg-white py-1 px-3 rounded shadow-sm text-xs text-gray-700"> 24時間以内 <span class="font-bold text-indigo-600">+30%</span> </div> <div class="bg-white py-1 px-3 rounded shadow-sm text-xs text-gray-700"> 当日納品 <span class="font-bold text-indigo-600">+50%</span> </div> </div> </div>
+            </div>
+        </div>
+
+        <div class="card-base p-6 animate-fadeInUp delay-3">
+            <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center"> <i class="fas fa-briefcase text-indigo-600 mr-2"></i> 翻訳サービス活用シーン </h3>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="use-case-item"> <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2"> <i class="fas fa-globe text-indigo-600"></i> </div> <h4 class="text-sm font-bold text-gray-800 mb-1">Webサイト</h4> <p class="text-xs text-gray-600">多言語対応で世界中のユーザーにリーチ</p> </div>
+                <div class="use-case-item"> <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2"> <i class="fas fa-file-alt text-indigo-600"></i> </div> <h4 class="text-sm font-bold text-gray-800 mb-1">ビジネス文書</h4> <p class="text-xs text-gray-600">契約書や提案資料の翻訳</p> </div>
+                <div class="use-case-item"> <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2"> <i class="fas fa-book text-indigo-600"></i> </div> <h4 class="text-sm font-bold text-gray-800 mb-1">マニュアル</h4> <p class="text-xs text-gray-600">製品・サービスの多言語マニュアル作成</p> </div>
+                <div class="use-case-item"> <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2"> <i class="fas fa-comments text-indigo-600"></i> </div> <h4 class="text-sm font-bold text-gray-800 mb-1">マーケティング</h4> <p class="text-xs text-gray-600">プロモーション資料やSNS投稿の多言語化</p> </div>
+                <div class="use-case-item"> <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2"> <i class="fas fa-graduation-cap text-indigo-600"></i> </div> <h4 class="text-sm font-bold text-gray-800 mb-1">学術・論文</h4> <p class="text-xs text-gray-600">研究論文や学術資料の翻訳</p> </div>
+            </div>
+        </div>
+        </main>
+    <footer class="w-full bg-gray-800 text-gray-400 py-8">
+      <div class="container mx-auto text-center">
+        <div class="mb-4">
+          <a href="index.html" class="px-3 hover:text-white transition text-sm">トップ</a> |
+          <a href="about.html" class="px-3 hover:text-white transition text-sm">TK Officeについて</a> |
+          <a href="services.html" class="px-3 hover:text-white transition text-sm">サービス一覧</a> |
+          <a href="contact.html" class="px-3 hover:text-white transition text-sm">お問い合わせ</a>
+        </div>
+        <p class="text-sm">© 2024-2025 TK Office. All Rights Reserved.</p>
+      </div>
+    </footer>
+    </body>
+</html>

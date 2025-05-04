@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>データ処理・分析サービス - TK Office</title> <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles specific to this Data page */
+        .data-chart {
+            background-color: white; border-radius: 1rem; padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .data-flow { position: relative; }
+        .data-flow-item { position: relative; padding-left: 30px; padding-bottom: 1rem; }
+        .data-flow-item:not(:last-child)::before { /* Line connector */
+            content: ''; position: absolute; left: 10px; top: 20px; bottom: -10px;
+            width: 2px; background: linear-gradient(to bottom, #3B82F6 0%, #8B5CF6 100%);
+        }
+        .data-flow-item::after { /* Circle marker */
+            content: ''; position: absolute; left: 6px; top: 6px; width: 10px; height: 10px;
+            border-radius: 50%; background: #3B82F6; z-index: 1;
+        }
+         .data-flow-item:nth-child(1)::after { background: #3B82F6; } /* Blue */
+         .data-flow-item:nth-child(2)::after { background: #4f46e5; } /* Indigo */
+         .data-flow-item:nth-child(3)::after { background: #7c3aed; } /* Purple */
+         .data-flow-item:nth-child(4)::after { background: #a78bfa; } /* Violet */
+         .data-flow-item:nth-child(5)::after { background: #8B5CF6; } /* End color */
+         /* Animation styles */
+         @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 20px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        /* Styles for service cards should be in style.css */
+         .service-card { /* Ensure this is defined */
+             background-color: white; border-radius: 1rem; box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+             transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;
+         }
+         .service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15); }
+         .service-icon { /* Ensure this is defined */
+             width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center;
+             justify-content: center; background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+             margin-right: 1rem; flex-shrink: 0;
+         }
+         .price-tag { /* Ensure this is defined */
+             background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%); color: white;
+             border-radius: 9999px; padding: 0.5rem 1rem; font-weight: bold; flex-shrink: 0;
+         }
+         .option-item { /* Ensure this is defined */
+             border-left: 2px solid #e5e7eb; transition: all 0.2s ease; padding: 0.25rem 0 0.25rem 0.75rem;
+         }
+         .option-item:hover { border-left: 2px solid #3B82F6; background-color: #f9fafb; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="w-full py-4 px-16 bg-blue-900 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-bold text-white">TK Office</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="index.html" class="text-gray-300 hover:text-white transition font-medium">トップ</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-white transition font-medium">TK Officeについて</a></li>
+             <li><a href="services.html" class="text-white font-bold border-b-2 border-white pb-1">サービス一覧</a></li>
+            <li><a href="flow.html" class="text-gray-300 hover:text-white transition font-medium">ご利用の流れ</a></li>
+            <li><a href="faq.html" class="text-gray-300 hover:text-white transition font-medium">よくある質問</a></li>
+            <li><a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-sm">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto py-12 px-4">
+        <div class="text-center mb-10 animate-fadeInUp">
+            <h1 class="text-4xl font-bold mb-3">
+                <i class="fas fa-database mr-3 text-green-600"></i>
+                <span class="gradient-text">データ入力・処理・分析サービス</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                AIを活用した効率的なデータ処理で、膨大な情報を価値あるインサイトに変換します
+            </p>
+             <nav aria-label="breadcrumb" class="mt-4 text-sm text-gray-500">
+                <ol class="list-none p-0 inline-flex">
+                  <li class="flex items-center"> <a href="index.html" class="hover:text-blue-600">トップ</a> <i class="fas fa-angle-right mx-2"></i> </li>
+                  <li class="flex items-center"> <a href="services.html" class="hover:text-blue-600">サービス一覧</a> <i class="fas fa-angle-right mx-2"></i> </li>
+                  <li class="text-gray-700" aria-current="page">データ処理・分析サービス</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="service-card p-5 animate-fadeInUp delay-1">
+                <div class="flex items-center justify-between mb-3"> <div class="flex items-center"> <div class="service-icon" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);"> <i class="fas fa-keyboard text-green-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">データ入力</h3> </div> <div class="price-tag"> 5,000円〜 </div> </div>
+                <div class="text-sm text-gray-500 mb-2 flex items-center"> <i class="far fa-clock mr-2"></i> <span>標準納期: 3日以内</span> </div>
+                <p class="text-gray-600 text-sm mb-3"> 紙書類や画像のテキスト抽出、表形式データの入力を効率化。高精度データ化で業務効率アップ。 </p>
+                <div class="bg-gray-50 p-3 rounded-lg mt-auto"> <h4 class="font-bold text-gray-700 text-sm mb-2">主なオプション</h4> <div class="space-y-2"> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>データクレンジング</span> <span class="text-blue-600 font-medium">+2,000円〜</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>特定形式へのフォーマット変換</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>入力項目の追加</span> <span class="text-blue-600 font-medium">+1,000円〜</span> </div> </div> </div>
+            </div>
+            <div class="service-card p-5 animate-fadeInUp delay-2">
+                <div class="flex items-center justify-between mb-3"> <div class="flex items-center"> <div class="service-icon" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);"> <i class="fas fa-chart-bar text-green-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">データ収集・整理</h3> </div> <div class="price-tag"> 5,000円〜 </div> </div>
+                <div class="text-sm text-gray-500 mb-2 flex items-center"> <i class="far fa-clock mr-2"></i> <span>標準納期: 3日以内</span> </div>
+                <p class="text-gray-600 text-sm mb-3"> Web上から必要なデータを収集・構造化。競合分析、市場調査、価格比較など、意思決定に必要な情報を整理します。 </p>
+                <div class="bg-gray-50 p-3 rounded-lg mt-auto"> <h4 class="font-bold text-gray-700 text-sm mb-2">主なオプション</h4> <div class="space-y-2"> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>収集元リスト・収集条件の明記</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>データの簡易的な可視化</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>定期的な収集・更新契約</span> <span class="text-blue-600 font-medium">要見積</span> </div> </div> </div>
+            </div>
+            <div class="service-card p-5 animate-fadeInUp delay-3">
+                <div class="flex items-center justify-between mb-3"> <div class="flex items-center"> <div class="service-icon" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);"> <i class="fas fa-poll text-green-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">アンケート結果<br>集計・分析</h3> </div> <div class="price-tag"> 5,000円〜 </div> </div>
+                <div class="text-sm text-gray-500 mb-2 flex items-center"> <i class="far fa-clock mr-2"></i> <span>標準納期: 3日以内</span> </div>
+                <p class="text-gray-600 text-sm mb-3"> アンケート結果の集計・分析をAI活用で効率化。クロス集計や自由回答の分類、インサイト抽出で顧客の声を可視化。 </p>
+                <div class="bg-gray-50 p-3 rounded-lg mt-auto"> <h4 class="font-bold text-gray-700 text-sm mb-2">主なオプション</h4> <div class="space-y-2"> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>クロス集計の追加</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>自由回答の簡易テキストマイニング</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>レポート形式（PPT等）での納品</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> </div> </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="card-base p-6 animate-fadeInUp delay-4 col-span-1 md:col-span-2">
+                <div class="flex items-center mb-4"> <div class="service-icon" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);"> <i class="fas fa-chart-pie text-green-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">データ可視化と分析フロー</h3> </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div> <h4 class="font-bold text-gray-700 text-sm mb-2">データ活用例</h4> <div class="data-chart p-4"> <div class="w-full h-full flex items-center justify-center"> <div class="grid grid-cols-4 gap-2 w-full"> <div class="bg-blue-100 rounded flex items-center justify-center text-xs text-blue-800 p-2"> 生データ </div> <div class="bg-blue-200 rounded flex items-center justify-center text-xs text-blue-800 p-2"> データ整形 </div> <div class="bg-blue-300 rounded flex items-center justify-center text-xs text-blue-800 p-2"> 分析処理 </div> <div class="bg-blue-400 rounded flex items-center justify-center text-xs text-white p-2"> インサイト </div> <div class="bg-green-100 rounded flex items-center justify-center text-xs text-green-800 p-2"> データ収集 </div> <div class="bg-green-200 rounded flex items-center justify-center text-xs text-green-800 p-2"> クレンジング </div> <div class="bg-green-300 rounded flex items-center justify-center text-xs text-green-800 p-2"> 統計処理 </div> <div class="bg-green-400 rounded flex items-center justify-center text-xs text-white p-2"> 可視化 </div> <div class="bg-purple-100 rounded flex items-center justify-center text-xs text-purple-800 p-2"> アンケート </div> <div class="bg-purple-200 rounded flex items-center justify-center text-xs text-purple-800 p-2"> 分類・集計 </div> <div class="bg-purple-300 rounded flex items-center justify-center text-xs text-purple-800 p-2"> 回答分析 </div> <div class="bg-purple-400 rounded flex items-center justify-center text-xs text-white p-2"> レポート </div> </div> </div> </div> </div>
+                    <div> <h4 class="font-bold text-gray-700 text-sm mb-2">AIデータ処理フロー</h4> <div class="data-flow space-y-4"> <div class="data-flow-item"> <h5 class="text-sm font-bold text-gray-700 pt-1">01. データ収集・入力</h5> <p class="text-xs text-gray-600">AIが多様な形式の生データを収集・認識</p> </div> <div class="data-flow-item"> <h5 class="text-sm font-bold text-gray-700 pt-1">02. データクレンジング</h5> <p class="text-xs text-gray-600">不要データの削除、表記ゆれ修正、欠損値処理</p> </div> <div class="data-flow-item"> <h5 class="text-sm font-bold text-gray-700 pt-1">03. データ分析・処理</h5> <p class="text-xs text-gray-600">AIによるパターン検出、統計処理、分類</p> </div> <div class="data-flow-item"> <h5 class="text-sm font-bold text-gray-700 pt-1">04. 結果可視化</h5> <p class="text-xs text-gray-600">分析結果をグラフ・チャートで表現</p> </div> <div class="data-flow-item"> <h5 class="text-sm font-bold text-blue-600 pt-1">05. レポート作成</h5> <p class="text-xs text-gray-600">インサイトをビジネス目線でレポート化</p> </div> </div> </div>
+                </div>
+            </div>
+            <div class="card-base p-5 animate-fadeInUp delay-5 col-span-1 flex flex-col">
+                <div class="flex items-center mb-3"> <div class="service-icon" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);"> <i class="fas fa-star text-green-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">サービス特徴</h3> </div>
+                <ul class="text-gray-600 text-sm space-y-2 mb-4 flex-grow"> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span>AI技術によるデータ処理の高速化・効率化</span> </li> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span>精度の高い自動認識と人間によるチェック</span> </li> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span>複数フォーマット対応（CSV, Excel, JSON等）</span> </li> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span>ビジネス課題解決に直結するデータ整理</span> </li> <li class="flex items-start"> <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i> <span>情報漏洩防止のセキュリティ対策実施</span> </li> </ul>
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 p-3 rounded-lg text-center mt-auto"> <p class="text-green-600 font-medium text-sm mb-3">お急ぎの場合は特急対応も可能です</p> <div class="flex justify-center space-x-3"> <div class="bg-white py-1 px-3 rounded shadow-sm text-xs text-gray-700"> 24時間以内 <span class="font-bold text-green-600">+30%</span> </div> <div class="bg-white py-1 px-3 rounded shadow-sm text-xs text-gray-700"> 当日納品 <span class="font-bold text-green-600">+50%</span> </div> </div> </div>
+            </div>
+        </div>
+        </main>
+    <footer class="w-full bg-gray-800 text-gray-400 py-8">
+      <div class="container mx-auto text-center">
+        <div class="mb-4">
+          <a href="index.html" class="px-3 hover:text-white transition text-sm">トップ</a> |
+          <a href="about.html" class="px-3 hover:text-white transition text-sm">TK Officeについて</a> |
+          <a href="services.html" class="px-3 hover:text-white transition text-sm">サービス一覧</a> |
+          <a href="contact.html" class="px-3 hover:text-white transition text-sm">お問い合わせ</a>
+        </div>
+        <p class="text-sm">© 2024-2025 TK Office. All Rights Reserved.</p>
+      </div>
+    </footer>
+    </body>
+</html>

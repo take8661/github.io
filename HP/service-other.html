@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>その他のAIサービス - TK Office</title> <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles specific to this "Other Services" page */
+        .chat-bubble { position: relative; padding: 10px 15px; border-radius: 12px; font-size: 0.875rem; max-width: 80%; }
+        .chat-bubble::after { content: ''; position: absolute; width: 0; height: 0; border: 8px solid transparent; }
+        .chat-user { background-color: #e5e7eb; margin-left: auto; }
+        .chat-user::after { right: -8px; top: 50%; transform: translateY(-50%); border-left-color: #e5e7eb; }
+        .chat-bot { background-color: #dbeafe; margin-right: auto; }
+        .chat-bot::after { left: -8px; top: 50%; transform: translateY(-50%); border-right-color: #dbeafe; }
+        .step-circle { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 12px; flex-shrink: 0; }
+        /* Animation styles */
+         @keyframes fadeInUp { from { opacity: 0; transform: translate3d(0, 20px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
+        .animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
+        /* Styles for cards should be in style.css */
+        .service-card, .card-base { background-color: white; border-radius: 1rem; box-shadow: 0 10px 15px rgba(0,0,0,0.05); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; }
+        .service-card:hover, .card-base:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(59, 130, 246, 0.15); }
+        .service-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); margin-right: 1rem; flex-shrink: 0; }
+        .price-tag { background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%); color: white; border-radius: 9999px; padding: 0.5rem 1rem; font-weight: bold; flex-shrink: 0; }
+        .option-item { border-left: 2px solid #e5e7eb; transition: all 0.2s ease; padding: 0.25rem 0 0.25rem 0.75rem; }
+        .option-item:hover { border-left: 2px solid #3B82F6; background-color: #f9fafb; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="w-full py-4 px-16 bg-blue-900 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-bold text-white">TK Office</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="index.html" class="text-gray-300 hover:text-white transition font-medium">トップ</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-white transition font-medium">TK Officeについて</a></li>
+            <li><a href="services.html" class="text-white font-bold border-b-2 border-white pb-1">サービス一覧</a></li> <li><a href="flow.html" class="text-gray-300 hover:text-white transition font-medium">ご利用の流れ</a></li>
+            <li><a href="faq.html" class="text-gray-300 hover:text-white transition font-medium">よくある質問</a></li>
+            <li><a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-sm">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto py-12 px-4">
+        <div class="text-center mb-10 animate-fadeInUp">
+            <h1 class="text-4xl font-bold mb-3">
+                 <i class="fas fa-star mr-3 text-yellow-500"></i>
+                 <span class="gradient-text">その他のAIサービス</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                 チャットボット開発からAIツールの活用サポートまで、ビジネスのAI導入を総合的にバックアップ
+            </p>
+             <nav aria-label="breadcrumb" class="mt-4 text-sm text-gray-500">
+                <ol class="list-none p-0 inline-flex">
+                  <li class="flex items-center"> <a href="index.html" class="hover:text-blue-600">トップ</a> <i class="fas fa-angle-right mx-2"></i> </li>
+                  <li class="flex items-center"> <a href="services.html" class="hover:text-blue-600">サービス一覧</a> <i class="fas fa-angle-right mx-2"></i> </li>
+                  <li class="text-gray-700" aria-current="page">その他のAIサービス</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+             <div class="card-base p-6 animate-fadeInUp delay-1">
+                <div class="flex items-center justify-between mb-4"> <div class="flex items-center"> <div class="service-icon" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);"> <i class="fas fa-comment-dots text-yellow-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">AIチャットボットの<br>シナリオ作成</h3> </div> <div class="price-tag"> 5,000円〜 </div> </div>
+                <div class="text-sm text-gray-500 mb-3 flex items-center"> <i class="far fa-clock mr-2"></i> <span>標準納期: 3日以内</span> </div>
+                <p class="text-gray-600 text-sm mb-4"> お客様対応や社内FAQなど、目的に応じたチャットボットのシナリオを設計。会話の流れや分岐、応答パターンを最適化し、スムーズな対話体験を実現します。 </p>
+                <div class="bg-yellow-50 p-4 rounded-lg mb-5"> <h4 class="font-bold text-gray-700 text-sm mb-3">チャットボット会話例</h4> <div class="space-y-3"> <div class="flex justify-end"> <div class="chat-bubble chat-user text-gray-700"> 商品の返品方法について教えてください。 </div> </div> <div class="flex justify-start"> <div class="chat-bubble chat-bot text-gray-700"> 返品をご希望の場合は、購入日から14日以内であれば承っております。以下の選択肢からお手続き方法をお選びください： </div> </div> <div class="flex justify-start"> <div class="chat-bubble chat-bot text-gray-700"> <div class="space-y-1"> <div class="bg-white p-1 px-2 rounded text-blue-600 text-xs cursor-pointer hover:bg-blue-50">1. オンラインで返品手続きをする</div> <div class="bg-white p-1 px-2 rounded text-blue-600 text-xs cursor-pointer hover:bg-blue-50">2. 店舗で返品する</div> <div class="bg-white p-1 px-2 rounded text-blue-600 text-xs cursor-pointer hover:bg-blue-50">3. 返品ポリシーを確認する</div> <div class="bg-white p-1 px-2 rounded text-blue-600 text-xs cursor-pointer hover:bg-blue-50">4. カスタマーサポートに連絡する</div> </div> </div> </div> </div> </div>
+                <div class="bg-gray-50 p-3 rounded-lg mt-auto"> <h4 class="font-bold text-gray-700 text-sm mb-2">主なオプション</h4> <div class="grid grid-cols-1 gap-2"> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>シナリオ分岐の追加・複雑化</span> <span class="text-blue-600 font-medium">+2,000円〜</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>応答メッセージの複数パターン作成</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>エスカレーション（有人対応）ルール設計</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>導入プラットフォームへの簡易設定サポート</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> </div> </div>
+            </div>
+            <div class="card-base p-6 animate-fadeInUp delay-2">
+                <div class="flex items-center justify-between mb-4"> <div class="flex items-center"> <div class="service-icon" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);"> <i class="fas fa-chalkboard-teacher text-green-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">AIツールの使い方<br>レクチャー・相談</h3> </div> <div class="price-tag"> 5,000円〜 </div> </div>
+                <div class="text-sm text-gray-500 mb-3 flex items-center"> <i class="far fa-clock mr-2"></i> <span>標準納期: 3日以内（実施日ベース）</span> </div>
+                <p class="text-gray-600 text-sm mb-4"> ChatGPT、Midjourney、Notionなど各種AIツールの活用方法をオンラインでレクチャー。あなたのビジネスや業務に合わせた実践的な使い方をわかりやすく解説します。 </p>
+                <div class="grid grid-cols-2 gap-3 mb-5"> <div class="bg-white rounded-lg shadow-sm p-3 flex flex-col items-center border border-gray-100"> <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-2"> <i class="fas fa-comments text-green-600"></i> </div> <h4 class="text-sm font-bold text-gray-700 mb-1">テキスト系AI</h4> <p class="text-xs text-gray-500 text-center">ChatGPT, Claude 等</p> </div> <div class="bg-white rounded-lg shadow-sm p-3 flex flex-col items-center border border-gray-100"> <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-2"> <i class="fas fa-image text-purple-600"></i> </div> <h4 class="text-sm font-bold text-gray-700 mb-1">画像系AI</h4> <p class="text-xs text-gray-500 text-center">Midjourney, DALL-E 等</p> </div> <div class="bg-white rounded-lg shadow-sm p-3 flex flex-col items-center border border-gray-100"> <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-2"> <i class="fas fa-tasks text-blue-600"></i> </div> <h4 class="text-sm font-bold text-gray-700 mb-1">業務効率化AI</h4> <p class="text-xs text-gray-500 text-center">Notion AI, Copilot 等</p> </div> <div class="bg-white rounded-lg shadow-sm p-3 flex flex-col items-center border border-gray-100"> <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-2"> <i class="fas fa-code text-red-600"></i> </div> <h4 class="text-sm font-bold text-gray-700 mb-1">開発支援AI</h4> <p class="text-xs text-gray-500 text-center">GitHub Copilot 等</p> </div> </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-auto"> <div class="bg-green-50 p-3 rounded-lg"> <h4 class="font-bold text-gray-700 text-sm mb-2">主なオプション</h4> <div class="space-y-2"> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>対応時間延長</span> <span class="text-blue-600 font-medium">+1千円/30分</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>録画データの提供</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>アフターフォロー</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>実践的なデモ</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> </div> </div> <div class="bg-blue-50 p-3 rounded-lg"> <h4 class="font-bold text-gray-700 text-sm mb-2">レクチャーの流れ</h4> <div class="space-y-2"> <div class="flex items-start"> <div class="step-circle bg-blue-500 mr-2 mt-0.5">1</div> <p class="text-xs text-gray-600">ニーズ・現状のヒアリング</p> </div> <div class="flex items-start"> <div class="step-circle bg-blue-500 mr-2 mt-0.5">2</div> <p class="text-xs text-gray-600">最適なツール・活用法の提案</p> </div> <div class="flex items-start"> <div class="step-circle bg-blue-500 mr-2 mt-0.5">3</div> <p class="text-xs text-gray-600">実践的なデモンストレーション</p> </div> <div class="flex items-start"> <div class="step-circle bg-blue-500 mr-2 mt-0.5">4</div> <p class="text-xs text-gray-600">質疑応答・実践サポート</p> </div> </div> </div> </div>
+            </div>
+        </div>
+
+        <div class="card-base p-6 animate-fadeInUp delay-3">
+            <div class="flex items-center mb-4"> <div class="service-icon" style="background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);"> <i class="fas fa-lightbulb text-yellow-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">サービス活用のポイント</h3> </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-5"> <div class="bg-white rounded-lg shadow-sm p-4 border border-gray-100"> <div class="flex items-start mb-3"> <div class="bg-amber-100 rounded-full p-2 mr-3 flex-shrink-0"> <i class="fas fa-rocket text-amber-600"></i> </div> <h4 class="text-base font-bold text-gray-800">ビジネス効率化</h4> </div> <p class="text-sm text-gray-600"> チャットボットによる問い合わせ対応の自動化や、AIツール活用による業務プロセスの効率化で、人的リソースを本来の価値創出業務に集中できます。 </p> </div> <div class="bg-white rounded-lg shadow-sm p-4 border border-gray-100"> <div class="flex items-start mb-3"> <div class="bg-blue-100 rounded-full p-2 mr-3 flex-shrink-0"> <i class="fas fa-graduation-cap text-blue-600"></i> </div> <h4 class="text-base font-bold text-gray-800">スキルアップ</h4> </div> <p class="text-sm text-gray-600"> AIツールのレクチャーを通じて、あなたや組織のデジタルスキルを向上。最新技術を理解し活用できる人材育成で、企業の競争力強化につながります。 </p> </div> <div class="bg-white rounded-lg shadow-sm p-4 border border-gray-100"> <div class="flex items-start mb-3"> <div class="bg-green-100 rounded-full p-2 mr-3 flex-shrink-0"> <i class="fas fa-chart-line text-green-600"></i> </div> <h4 class="text-base font-bold text-gray-800">ユーザー体験向上</h4> </div> <p class="text-sm text-gray-600"> 洗練されたチャットボットシナリオにより、24時間365日のスムーズな顧客対応を実現。満足度の向上や解決時間の短縮で、顧客体験の質を高めます。 </p> </div> </div>
+             <div class="bg-gradient-to-r from-yellow-50 to-green-50 p-4 rounded-lg">
+                <div class="flex flex-col sm:flex-row items-center justify-between">
+                    <div class="mb-4 sm:mb-0 sm:mr-6 text-center sm:text-left">
+                        <h4 class="text-base font-bold text-gray-800 mb-1"> <i class="fas fa-info-circle text-blue-500 mr-2"></i> ご相談・お見積りは無料です </h4>
+                        <p class="text-sm text-gray-600"> AIツール導入でどのような効果が得られるか、どのサービスが最適かなど、お気軽にご相談ください。 </p>
+                    </div>
+                    <a href="contact.html" class="btn-primary text-white font-bold py-2 px-6 rounded-lg inline-block shadow-md hover:shadow-xl transition transform hover:-translate-y-1 flex-shrink-0">
+                        無料相談を予約する
+                    </a>
+                </div>
+            </div>
+        </div>
+        </main>
+    <footer class="w-full bg-gray-800 text-gray-400 py-8">
+      <div class="container mx-auto text-center">
+        <div class="mb-4">
+          <a href="index.html" class="px-3 hover:text-white transition text-sm">トップ</a> |
+          <a href="about.html" class="px-3 hover:text-white transition text-sm">TK Officeについて</a> |
+          <a href="services.html" class="px-3 hover:text-white transition text-sm">サービス一覧</a> |
+          <a href="contact.html" class="px-3 hover:text-white transition text-sm">お問い合わせ</a>
+        </div>
+        <p class="text-sm">© 2024-2025 TK Office. All Rights Reserved.</p>
+      </div>
+    </footer>
+    </body>
+</html>

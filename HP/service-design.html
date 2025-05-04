@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI画像・デザインサービス - TK Office</title> <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles specific to this Design page */
+        .sample-image {
+            width: 100%; height: 130px; border-radius: 0.5rem; background-color: #f3f4f6;
+            display: flex; align-items: center; justify-content: center; color: #9ca3af;
+        }
+        .mock-logo {
+            width: 90px; height: 90px; border-radius: 12px; display: flex; align-items: center;
+            justify-content: center; font-weight: bold; color: white; margin: 0 auto;
+        }
+        /* Use case item styles (if not in style.css) */
+        .use-case-item {
+            transition: all 0.3s ease; background-color: #f9fafb; border-radius: 0.5rem;
+            padding: 0.75rem; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+        }
+        .use-case-item:hover {
+            transform: translateY(-3px); box-shadow: 0 5px 15px rgba(96, 165, 250, 0.2);
+        }
+         /* Animation styles */
+         @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 20px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="w-full py-4 px-16 bg-blue-900 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="flex items-center">
+          <span class="text-xl font-bold text-white">TK Office</span>
+        </a>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="index.html" class="text-gray-300 hover:text-white transition font-medium">トップ</a></li>
+            <li><a href="about.html" class="text-gray-300 hover:text-white transition font-medium">TK Officeについて</a></li>
+             <li><a href="services.html" class="text-white font-bold border-b-2 border-white pb-1">サービス一覧</a></li>
+            <li><a href="flow.html" class="text-gray-300 hover:text-white transition font-medium">ご利用の流れ</a></li>
+            <li><a href="faq.html" class="text-gray-300 hover:text-white transition font-medium">よくある質問</a></li>
+            <li><a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-sm">お問い合わせ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container mx-auto py-12 px-4">
+        <div class="text-center mb-10 animate-fadeInUp">
+            <h1 class="text-4xl font-bold mb-3">
+                 <i class="fas fa-images mr-3 text-purple-600"></i>
+                 <span class="gradient-text">AI画像・デザインサービス</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                最新のAI技術を活用して、クオリティの高いイラスト、画像、ロゴデザインを提供します
+            </p>
+             <nav aria-label="breadcrumb" class="mt-4 text-sm text-gray-500">
+                <ol class="list-none p-0 inline-flex">
+                  <li class="flex items-center">
+                    <a href="index.html" class="hover:text-blue-600">トップ</a>
+                    <i class="fas fa-angle-right mx-2"></i>
+                  </li>
+                  <li class="flex items-center">
+                    <a href="services.html" class="hover:text-blue-600">サービス一覧</a>
+                    <i class="fas fa-angle-right mx-2"></i>
+                  </li>
+                  <li class="text-gray-700" aria-current="page">画像・デザインサービス</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+             <div class="card-base p-6 animate-fadeInUp delay-1"> <div class="flex items-center justify-between mb-4"> <div class="flex items-center"> <div class="service-icon" style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);"> <i class="fas fa-palette text-purple-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">AIイラスト・画像生成</h3> </div> <div class="price-tag"> 5,000円〜 </div> </div>
+                <div class="text-sm text-gray-500 mb-3 flex items-center"> <i class="far fa-clock mr-2"></i> <span>標準納期: 3日以内</span> </div>
+                <p class="text-gray-600 text-sm mb-4"> あなたのイメージやテーマをもとに、ビジネスや個人用途に最適なイラストや画像を生成します。Web・SNS・広告素材に最適です。 </p>
+                <div class="grid grid-cols-4 gap-2 mb-4"> <div class="sample-image bg-blue-100"> <span class="text-xs">ファッション</span> </div> <div class="sample-image bg-green-100"> <span class="text-xs">風景</span> </div> <div class="sample-image bg-yellow-100"> <span class="text-xs">商品</span> </div> <div class="sample-image bg-purple-100"> <span class="text-xs">イラスト</span> </div> </div>
+                <div class="bg-gray-50 p-3 rounded-lg"> <h4 class="font-bold text-gray-700 text-sm mb-2">主なオプション</h4> <div class="space-y-2"> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>高解像度化処理</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>複数バリエーション生成</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>簡単なレタッチ・文字入れ</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>背景透過処理</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> </div> </div>
+            </div>
+            <div class="card-base p-6 animate-fadeInUp delay-2"> <div class="flex items-center justify-between mb-4"> <div class="flex items-center"> <div class="service-icon" style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);"> <i class="fas fa-fingerprint text-purple-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">ロゴデザイン<br>(AI提案)</h3> </div> <div class="price-tag"> 5,000円〜 </div> </div>
+                <div class="text-sm text-gray-500 mb-3 flex items-center"> <i class="far fa-clock mr-2"></i> <span>標準納期: 3日以内</span> </div>
+                <p class="text-gray-600 text-sm mb-4"> ビジネスの個性を表現する魅力的なロゴデザインをAIで生成。<br>複数案から選べるため、イメージに合ったロゴに出会えます。 </p>
+                <div class="grid grid-cols-3 gap-4 mb-4"> <div class="flex flex-col items-center"> <div class="mock-logo bg-blue-500">ABC</div> <span class="text-xs text-gray-500 mt-2">モダン</span> </div> <div class="flex flex-col items-center"> <div class="mock-logo bg-green-500">ABC</div> <span class="text-xs text-gray-500 mt-2">クラシック</span> </div> <div class="flex flex-col items-center"> <div class="mock-logo bg-purple-500">ABC</div> <span class="text-xs text-gray-500 mt-2">クリエイティブ</span> </div> </div>
+                <div class="bg-gray-50 p-3 rounded-lg"> <h4 class="font-bold text-gray-700 text-sm mb-2">主なオプション</h4> <div class="space-y-2"> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>詳細の修正</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>モックアップ作成</span> <span class="text-blue-600 font-medium">+2,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>コンセプト説明文作成</span> <span class="text-blue-600 font-medium">+1,000円</span> </div> <div class="option-item pl-3 py-1 text-sm flex justify-between"> <span>簡易的なベクターデータ化</span> <span class="text-blue-600 font-medium">+2,000円〜</span> </div> </div> </div>
+            </div>
+        </div>
+
+        <div class="card-base p-6 animate-fadeInUp delay-3 flex flex-col md:flex-row">
+            <div class="w-full md:w-2/3 md:pr-6 mb-6 md:mb-0">
+                <div class="flex items-center mb-4"> <div class="service-icon" style="background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);"> <i class="fas fa-star text-purple-600"></i> </div> <h3 class="text-lg font-bold text-gray-800">サービス特徴と制作プロセス</h3> </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4"> <div> <h4 class="font-bold text-gray-700 text-sm mb-2 flex items-center"> <i class="fas fa-check-circle text-green-500 mr-2"></i>AIイラスト・画像生成 </h4> <ul class="text-xs text-gray-600 space-y-1 ml-6 list-disc"> <li>複数のAI画像生成エンジンを用途に応じて活用</li> <li>テキストプロンプトの最適化による品質向上</li> <li>必要に応じて人間によるレタッチ・品質調整</li> <li>著作権やライセンスの明確な説明</li> <li>ビジネス利用に適した画像スタイル提案</li> </ul> </div> <div> <h4 class="font-bold text-gray-700 text-sm mb-2 flex items-center"> <i class="fas fa-check-circle text-green-500 mr-2"></i>AIロゴデザイン </h4> <ul class="text-xs text-gray-600 space-y-1 ml-6 list-disc"> <li>ビジネスの特性やコンセプトに合わせた提案</li> <li>複数のデザイン案から選択可能</li> <li>色彩設計とブランドイメージの統一性</li> <li>各業種・業界に適したロゴスタイル提案</li> <li>簡易的な使用ガイドラインの提供</li> </ul> </div> </div>
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-3 rounded-lg"> <p class="text-purple-600 font-medium text-sm mb-3 text-center">お急ぎの場合は特急対応も可能です</p> <div class="flex justify-center space-x-6"> <div class="bg-white py-2 px-4 rounded shadow-sm text-xs text-gray-700"> 24時間以内 <span class="font-bold text-purple-600">+30%</span> </div> <div class="bg-white py-2 px-4 rounded shadow-sm text-xs text-gray-700"> 当日納品 <span class="font-bold text-purple-600">+50%</span> </div> </div> </div>
+            </div>
+            <div class="w-full md:w-1/3 bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-700 text-sm mb-3 text-center">ご利用の流れ</h4>
+                <div class="space-y-3"> <div class="flex items-start"> <div class="bg-purple-100 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold text-purple-700 mr-2 flex-shrink-0">1</div> <p class="text-xs text-gray-600">ご希望のイメージや用途、サイズ、スタイルなどをヒアリング</p> </div> <div class="flex items-start"> <div class="bg-purple-200 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold text-purple-700 mr-2 flex-shrink-0">2</div> <p class="text-xs text-gray-600">AIエンジンでラフ案を複数生成・調整</p> </div> <div class="flex items-start"> <div class="bg-purple-300 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold text-purple-700 mr-2 flex-shrink-0">3</div> <p class="text-xs text-gray-600">品質チェック・微調整を実施</p> </div> <div class="flex items-start"> <div class="bg-purple-400 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold text-purple-700 mr-2 flex-shrink-0">4</div> <p class="text-xs text-gray-600">完成案をご提案・フィードバック反映</p> </div> <div class="flex items-start"> <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold text-white mr-2 flex-shrink-0">5</div> <p class="text-xs text-gray-600">最終データ納品・必要に応じてオプション対応</p> </div> </div>
+            </div>
+        </div>
+        </main>
+    <footer class="w-full bg-gray-800 text-gray-400 py-8">
+      <div class="container mx-auto text-center">
+        <div class="mb-4">
+          <a href="index.html" class="px-3 hover:text-white transition text-sm">トップ</a> |
+          <a href="about.html" class="px-3 hover:text-white transition text-sm">TK Officeについて</a> |
+          <a href="services.html" class="px-3 hover:text-white transition text-sm">サービス一覧</a> |
+          <a href="contact.html" class="px-3 hover:text-white transition text-sm">お問い合わせ</a>
+        </div>
+        <p class="text-sm">© 2024-2025 TK Office. All Rights Reserved.</p>
+      </div>
+    </footer>
+    </body>
+</html>
