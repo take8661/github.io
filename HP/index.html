@@ -28,174 +28,161 @@
         .text-shadow-custom { text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6); }
         /* Service intro cards styles */
          .service-intro-card {
-             background-color: white; border-radius: 0.75rem; padding: 1.5rem;
-             text-align: center; transition: all 0.3s ease; border: 1px solid #e5e7eb;
-             height: 100%; display: flex; flex-direction: column; justify-content: space-between;
-         }
-         .service-intro-card:hover {
-             transform: translateY(-5px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
-             border-color: #93c5fd;
-         }
-         .service-intro-icon {
-             width: 56px; height: 56px; border-radius: 50%; display: flex;
-             align-items: center; justify-content: center; margin: 0 auto 1rem;
-             background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); flex-shrink: 0;
-         }
-          /* Animation styles */
-          @keyframes fadeInUp {
-              from { opacity: 0; transform: translate3d(0, 20px, 0); }
-              to { opacity: 1; transform: translate3d(0, 0, 0); }
-          }
-          .animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
-          .delay-1 { animation-delay: 0.1s; }
-          .delay-2 { animation-delay: 0.2s; }
-          .delay-3 { animation-delay: 0.3s; }
-          .delay-4 { animation-delay: 0.4s; }
-          .delay-5 { animation-delay: 0.5s; }
-          .delay-6 { animation-delay: 0.6s; }
-           /* CSS for word break */
-           .word-keep-all {
-             word-break: keep-all; /* 可能なら単語で改行 */
-             overflow-wrap: break-word; /* コンテナからはみ出す場合は強制改行 */
-           }
+            background-color: white; border-radius: 0.75rem; padding: 1.5rem;
+            text-align: center; transition: all 0.3s ease; border: 1px solid #e5e7eb;
+            height: 100%; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .service-intro-card:hover {
+            transform: translateY(-5px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
+            border-color: #93c5fd;
+        }
+        .service-intro-icon {
+            width: 56px; height: 56px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); flex-shrink: 0;
+        }
+         /* Animation styles */
+         @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 20px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.5s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+         /* CSS for word break */
+        .word-keep-all {
+          word-break: keep-all;
+          overflow-wrap: break-word;
+        }
     </style>
 </head>
 <body>
 
-    <header class="w-full py-4 px-4 sm:px-8 md:px-16 bg-blue-900 shadow-lg sticky top-0 z-50">
-      <div class="container mx-auto flex flex-wrap justify-between items-center">
+    <header class="w-full py-4 px-16 bg-blue-900 shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto flex justify-between items-center">
         <a href="index.html" class="flex items-center">
           <span class="text-xl font-bold text-white">TK Office</span>
         </a>
-        <nav class="w-full sm:w-auto mt-4 sm:mt-0">
-          <ul class="flex flex-col items-center space-y-3 sm:flex-row sm:space-x-4 md:space-x-6 sm:space-y-0">
+        <nav>
+          <ul class="flex space-x-6">
             <li><a href="index.html" class="text-white font-bold border-b-2 border-white pb-1">トップ</a></li>
             <li><a href="about.html" class="text-gray-300 hover:text-white transition font-medium">TK Officeについて</a></li>
             <li><a href="services.html" class="text-gray-300 hover:text-white transition font-medium">サービス一覧</a></li>
             <li><a href="flow.html" class="text-gray-300 hover:text-white transition font-medium">ご利用の流れ</a></li>
             <li><a href="faq.html" class="text-gray-300 hover:text-white transition font-medium">よくある質問</a></li>
-            <li><a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-sm block text-center sm:inline-block">お問い合わせ</a></li>
+            <li><a href="contact.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition text-sm">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
     </header>
-
-    <section class="hero-section-bg-fullscreen" style="background-image: url('画像/トップページ2.jpg');">
-        <div class="container mx-auto hero-content-container px-4"> {/* Added horizontal padding for smaller screens */}
+    <section class="hero-section-bg-fullscreen" style="background-image: url('画像/トップページ2.jpg');"> <div class="container mx-auto hero-content-container">
             <div class="max-w-4xl mx-auto text-center">
-                <span class="text-blue-300 font-bold text-base sm:text-lg mb-3 inline-block animate-fadeInUp delay-1 text-shadow-custom">AI活用でビジネスを加速する</span>
-                {/* Adjusted h1 text size */}
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fadeInUp delay-2 text-white text-shadow-custom">
+                <span class="text-blue-300 font-bold text-lg mb-3 inline-block animate-fadeInUp delay-1 text-shadow-custom">AI活用でビジネスを加速する</span>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fadeInUp delay-2 text-white text-shadow-custom">
                     <span class="gradient-text">高品質なAI活用</span>を<br>もっと手軽に、スピーディーに
                 </h1>
-                {/* Adjusted p text size */}
-                <p class="text-lg sm:text-xl md:text-2xl text-gray-100 mb-10 max-w-3xl mx-auto animate-fadeInUp delay-3 text-shadow-custom">
+                <p class="text-xl md:text-2xl text-gray-100 mb-10 max-w-3xl mx-auto animate-fadeInUp delay-3 text-shadow-custom">
                     「本当に向き合うべき課題」に集中できる環境。<br class="hidden md:block"> 未来のワークスタイルを、今、デザイン。
                 </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center animate-fadeInUp delay-4">
-                    {/* Adjusted button text size and padding */}
-                    <a href="services.html" class="btn-primary text-base sm:text-lg px-8 sm:px-10">
+                <div class="flex space-x-4 justify-center animate-fadeInUp delay-4">
+                    <a href="services.html" class="btn-primary text-lg px-10">
                         サービスを見る <i class="fas fa-arrow-right ml-2"></i>
                     </a>
-                    <a href="contact.html" class="bg-white bg-opacity-90 text-blue-700 font-bold py-3 px-8 sm:px-10 rounded-lg border border-transparent hover:bg-opacity-100 transition text-base sm:text-lg">
+                    <a href="contact.html" class="bg-white bg-opacity-90 text-blue-700 font-bold py-3 px-10 rounded-lg border border-transparent hover:bg-opacity-100 transition text-lg">
                         無料相談・お見積り
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
-    <main class="container mx-auto py-16 px-4"> {/* Added horizontal padding for smaller screens */}
+    <main class="container mx-auto py-16">
 
         <section class="mb-16 text-center animate-fadeInUp delay-3">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-4"><span class="gradient-text">提供サービス</span></h2>
-            <p class="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">6つのカテゴリーで、あなたのビジネス課題をAIが解決します。</p>
-            {/* Changed grid columns for mobile first (1 col -> 2 cols -> 3 cols -> 6 cols) */}
-             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                 {/* Removed &nbsp; for better natural wrapping */}
-                  <a href="service-writing.html" class="service-intro-card">
-                      <div> <div class="service-intro-icon"> <i class="fas fa-pen-fancy text-2xl text-blue-600"></i> </div> <h3 class="font-bold text-gray-800 mb-2">ライティング</h3> <p class="text-xs text-gray-500 word-keep-all">記事作成、SEO、SNS投稿、脚本、要約など</p> </div>
+            <h2 class="text-4xl font-bold mb-4"><span class="gradient-text">提供サービス</span></h2>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">6つのカテゴリーで、あなたのビジネス課題をAIが解決します。</p>
+             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                 <a href="service-writing.html" class="service-intro-card">
+                    <div> <div class="service-intro-icon"> <i class="fas fa-pen-fancy text-2xl text-blue-600"></i> </div> <h3 class="font-bold text-gray-800 mb-2">ライティング</h3> <p class="text-xs text-gray-500 word-keep-all">記事作成、SEO、SNS投稿、脚本、要&nbsp;約など</p> </div>
+                    <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
+                </a>
+                <a href="service-design.html" class="service-intro-card">
+                    <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);"> <i class="fas fa-images text-2xl text-purple-600"></i> </div> <h3 class="font-bold text-gray-800 mb-2">デザイン</h3> <p class="text-xs text-gray-500 word-keep-all">イラスト・画像生成、ロゴデザイン提案など</p> </div>
+                    <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
+                </a>
+                <a href="service-data.html" class="service-intro-card">
+                     <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);"> <i class="fas fa-database text-2xl text-green-600"></i> </div> <h3 class="font-bold text-gray-800 mb-2">データ処理</h3> <p class="text-xs text-gray-500 word-keep-all">データ入力、収集・整&nbsp;理、アンケート分&nbsp;析など</p> </div>
                       <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
-                  </a>
-                  <a href="service-design.html" class="service-intro-card">
-                      <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);"> <i class="fas fa-images text-2xl text-purple-600"></i> </div> <h3 class="font-bold text-gray-800 mb-2">デザイン</h3> <p class="text-xs text-gray-500 word-keep-all">イラスト・画像生成、ロゴデザイン提案など</p> </div>
+                </a>
+                <a href="service-translation.html" class="service-intro-card">
+                     <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);"> <i class="fas fa-language text-2xl text-indigo-600"></i> </div> <h3 class="font-bold text-gray-800 mb-2">翻訳 </h3> <p class="text-xs text-gray-500 word-keep-all">AI翻訳＋人力修正で高&nbsp;品質・高速翻訳</p> </div>
                       <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
-                  </a>
-                  <a href="service-data.html" class="service-intro-card">
-                      <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);"> <i class="fas fa-database text-2xl text-green-600"></i> </div> <h3 class="font-bold text-gray-800 mb-2">データ処理</h3> <p class="text-xs text-gray-500 word-keep-all">データ入力、収集・整理、アンケート分析など</p> </div>
-                       <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
-                  </a>
-                  <a href="service-translation.html" class="service-intro-card">
-                       <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);"> <i class="fas fa-language text-2xl text-indigo-600"></i> </div> <h3 class="font-bold text-gray-800 mb-2">翻訳 </h3> <p class="text-xs text-gray-500 word-keep-all">AI翻訳＋人力修正で高品質・高速翻訳</p> </div>
-                       <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
-                  </a>
-                  <a href="service-audio.html" class="service-intro-card">
-                       <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);"> <i class="fas fa-microphone-alt text-2xl text-red-500"></i> </div> <h3 class="font-bold text-gray-800 mb-2">音声・動画</h3> <p class="text-xs text-gray-500 word-keep-all">文字起こし、修正、要約、字幕作成など</p> </div>
-                       <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
-                   </a>
-                  <a href="service-other.html" class="service-intro-card">
-                       <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);"> <i class="fas fa-star text-2xl text-yellow-500"></i> </div> <h3 class="font-bold text-gray-800 mb-2">その他</h3> <p class="text-xs text-gray-500 word-keep-all">チャットボット、ツールレクチャー、AI導入相談</p> </div>
-                       <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
-                   </a>
-             </div>
-             <div class="mt-8 text-center">
-                  <a href="services.html" class="text-blue-600 hover:underline font-medium">全てのサービス一覧を見る <i class="fas fa-chevron-right text-xs ml-1"></i></a>
-             </div>
+                </a>
+                <a href="service-audio.html" class="service-intro-card">
+                     <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);"> <i class="fas fa-microphone-alt text-2xl text-red-500"></i> </div> <h3 class="font-bold text-gray-800 mb-2">音声・動画</h3> <p class="text-xs text-gray-500 word-keep-all">文字起こし、修正、要&nbsp;約、字幕作成など</p> </div>
+                      <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
+                 </a>
+                <a href="service-other.html" class="service-intro-card">
+                     <div> <div class="service-intro-icon" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);"> <i class="fas fa-star text-2xl text-yellow-500"></i> </div> <h3 class="font-bold text-gray-800 mb-2">その他</h3> <p class="text-xs text-gray-500 word-keep-all">チャットボット、ツ&nbsp;ール&nbsp;レク&nbsp;チャー、AI導&nbsp;入相&nbsp;談</p> </div>
+                      <div class="mt-4 text-blue-600 hover:underline text-xs font-semibold">詳細へ →</div>
+                 </a>
+            </div>
+            <div class="mt-8 text-center">
+                 <a href="services.html" class="text-blue-600 hover:underline font-medium">全てのサービス一覧を見る <i class="fas fa-chevron-right text-xs ml-1"></i></a>
+            </div>
         </section>
 
-        <section class="mb-16 bg-white rounded-2xl p-6 sm:p-10 shadow-lg animate-fadeInUp delay-4"> {/* Adjusted padding */}
-            {/* Grid already responsive (1 col -> 3 cols) */}
+        <section class="mb-16 bg-white rounded-2xl p-10 shadow-lg animate-fadeInUp delay-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 <div class="md:col-span-2">
-                     <h2 class="text-2xl sm:text-3xl font-bold mb-4">なぜ TK Office？</h2> {/* Adjusted heading size */}
+                     <h2 class="text-3xl font-bold mb-4">なぜ TK Office？</h2>
                      <p class="text-gray-600 mb-6">AIの導入や活用には専門知識が必要で、時間もコストもかかります。私たちはそのハードルを下げ、プロの品質を手軽に利用できるサービスを提供します。</p>
-                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm"> {/* Changed to 1 col on smallest, 2 cols on sm+ */}
-                         <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">スピード納品:</strong> 標準3日、最短当日</div></div>
-                         <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">手頃な価格:</strong> 5,000円から</div></div>
-                         <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">幅広い対応:</strong> 6カテゴリー・20種以上</div></div>
-                         <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1 flex-shrink-0"></i><div><strong class="text-gray-800">安心の品質:</strong> AI+人間のハイブリッド</div></div>
+                     <div class="grid grid-cols-2 gap-6 text-sm">
+                         <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i><div><strong class="text-gray-800">スピード納品:</strong> 標準3日、最短当日</div></div>
+                         <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i><div><strong class="text-gray-800">手頃な価格:</strong> 5,000円から</div></div>
+                         <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i><div><strong class="text-gray-800">幅広い対応:</strong> 6カテゴリー・20種以上</div></div>
+                         <div class="flex items-start"><i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i><div><strong class="text-gray-800">安心の品質:</strong> AI+人間のハイブリッド</div></div>
                      </div>
                      <div class="mt-8">
                          <a href="about.html" class="text-blue-600 hover:underline font-medium">さらに詳しく (選ばれる理由) <i class="fas fa-chevron-right text-xs ml-1"></i></a>
                      </div>
                  </div>
                  <div class="hidden md:block text-center">
-                      <i class="fas fa-robot text-8xl lg:text-9xl text-blue-200"></i> {/* Adjusted icon size slightly */}
+                      <i class="fas fa-robot text-9xl text-blue-200"></i>
                  </div>
-             </div>
-          </section>
+            </div>
+         </section>
 
         <section class="text-center animate-fadeInUp delay-5">
-               <h2 class="text-2xl sm:text-3xl font-bold mb-4"><span class="gradient-text">ご利用は簡単</span></h2> {/* Adjusted heading size */}
-               <p class="text-base sm:text-lg text-gray-600 mb-10 max-w-2xl mx-auto">たったの5ステップでAI活用を始められます。</p> {/* Adjusted text size */}
-               {/* Flex wrap should handle responsiveness */}
-               <div class="flex flex-wrap justify-center items-start sm:items-center gap-x-4 gap-y-6 text-gray-700 mb-8"> {/* Increased gap-y */}
-                   <div class="flex flex-col items-center w-28 sm:w-32"> <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-2"><i class="fas fa-comments text-2xl text-blue-500"></i></div> <span class="text-xs sm:text-sm font-medium text-center">1.お問い合わせ</span> </div>
-                   <i class="fas fa-arrow-right text-gray-400 hidden md:block self-center"></i>
-                   <div class="flex flex-col items-center w-28 sm:w-32"> <div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center mb-2"><i class="fas fa-file-contract text-2xl text-indigo-500"></i></div> <span class="text-xs sm:text-sm font-medium text-center">2.ヒアリング</span> </div>
-                   <i class="fas fa-arrow-right text-gray-400 hidden md:block self-center"></i>
-                   <div class="flex flex-col items-center w-28 sm:w-32"> <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-2"><i class="fas fa-laptop-code text-2xl text-purple-500"></i></div> <span class="text-xs sm:text-sm font-medium text-center">3.作業開始</span> </div>
-                   <i class="fas fa-arrow-right text-gray-400 hidden md:block self-center"></i>
-                   <div class="flex flex-col items-center w-28 sm:w-32"> <div class="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center mb-2"><i class="fas fa-clipboard-check text-2xl text-pink-500"></i></div> <span class="text-xs sm:text-sm font-medium text-center">4.納品</span> </div>
-                   <i class="fas fa-arrow-right text-gray-400 hidden md:block self-center"></i>
-                   <div class="flex flex-col items-center w-28 sm:w-32"> <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-2"><i class="fas fa-sync-alt text-2xl text-red-500"></i></div> <span class="text-xs sm:text-sm font-medium text-center">5.修正対応</span> </div>
-               </div>
-                <a href="flow.html" class="text-blue-600 hover:underline font-medium">ご利用の流れ詳細 <i class="fas fa-chevron-right text-xs ml-1"></i></a>
-           </section>
+              <h2 class="text-3xl font-bold mb-4"><span class="gradient-text">ご利用は簡単</span></h2>
+              <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">たったの5ステップでAI活用を始められます。</p>
+              <div class="flex flex-wrap justify-center items-center gap-x-4 gap-y-4 text-gray-700 mb-8">
+                  <div class="flex flex-col items-center w-32"> <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-2"><i class="fas fa-comments text-2xl text-blue-500"></i></div> <span class="text-sm font-medium">1.お問い合わせ</span> </div>
+                  <i class="fas fa-arrow-right text-gray-400 hidden md:block"></i>
+                  <div class="flex flex-col items-center w-32"> <div class="w-16 h-16 rounded-full bg-indigo-100 flex items-center justify-center mb-2"><i class="fas fa-file-contract text-2xl text-indigo-500"></i></div> <span class="text-sm font-medium">2.ヒアリング</span> </div>
+                  <i class="fas fa-arrow-right text-gray-400 hidden md:block"></i>
+                  <div class="flex flex-col items-center w-32"> <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-2"><i class="fas fa-laptop-code text-2xl text-purple-500"></i></div> <span class="text-sm font-medium">3.作業開始</span> </div>
+                  <i class="fas fa-arrow-right text-gray-400 hidden md:block"></i>
+                  <div class="flex flex-col items-center w-32"> <div class="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center mb-2"><i class="fas fa-clipboard-check text-2xl text-pink-500"></i></div> <span class="text-sm font-medium">4.納品</span> </div>
+                  <i class="fas fa-arrow-right text-gray-400 hidden md:block"></i>
+                  <div class="flex flex-col items-center w-32"> <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center mb-2"><i class="fas fa-sync-alt text-2xl text-red-500"></i></div> <span class="text-sm font-medium">5.修正対応</span> </div>
+              </div>
+               <a href="flow.html" class="text-blue-600 hover:underline font-medium">ご利用の流れ詳細 <i class="fas fa-chevron-right text-xs ml-1"></i></a>
+         </section>
     </main>
-
-    <footer class="w-full bg-gray-800 text-gray-400 py-8 px-4"> {/* Added horizontal padding */}
+    <footer class="w-full bg-gray-800 text-gray-400 py-8">
       <div class="container mx-auto text-center">
-        <div class="mb-4 flex flex-wrap justify-center gap-y-2"> {/* Use flex-wrap for better wrapping */}
-          {/* Added py-1 and px-2/sm:px-3 for better tap targets and spacing */}
-          <a href="index.html" class="inline-block py-1 px-2 sm:px-3 hover:text-white transition text-sm">トップ</a> <span class="hidden sm:inline mx-1">|</span>
-          <a href="about.html" class="inline-block py-1 px-2 sm:px-3 hover:text-white transition text-sm">TK Officeについて</a> <span class="hidden sm:inline mx-1">|</span>
-          <a href="services.html" class="inline-block py-1 px-2 sm:px-3 hover:text-white transition text-sm">サービス一覧</a> <span class="hidden sm:inline mx-1">|</span>
-          <a href="contact.html" class="inline-block py-1 px-2 sm:px-3 hover:text-white transition text-sm">お問い合わせ</a>
+        <div class="mb-4">
+          <a href="index.html" class="px-3 hover:text-white transition text-sm">トップ</a> |
+          <a href="about.html" class="px-3 hover:text-white transition text-sm">TK Officeについて</a> |
+          <a href="services.html" class="px-3 hover:text-white transition text-sm">サービス一覧</a> |
+          <a href="contact.html" class="px-3 hover:text-white transition text-sm">お問い合わせ</a>
         </div>
         <p class="text-sm">© 2024-2025 TK Office. All Rights Reserved.</p>
       </div>
     </footer>
-
     </body>
 </html>
